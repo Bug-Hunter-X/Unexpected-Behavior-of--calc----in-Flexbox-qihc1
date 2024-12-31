@@ -1,0 +1,18 @@
+To avoid the issues with `calc()` within flexbox, it's often better to use alternative layout strategies. One common approach is to avoid the use of `calc()` entirely, instead making use of the `flex-basis` property along with `flex-grow` for dynamic resizing. Another strategy might be to use grid layout, which provides more direct control over item sizing.
+
+Here's an example of a revised CSS that uses flexbox more effectively avoiding the pitfalls of `calc()` in this context:
+
+```css
+.container {
+  display: flex;
+}
+
+.item {
+  flex-grow: 1;
+  flex-basis: 0;
+  margin: 0 5px;
+ /* Alternatively:  width: 50%; */
+}
+```
+
+This approach uses `flex-grow: 1` to distribute available space equally between items. The `flex-basis: 0` prevents them from occupying any initial space.  Margins are employed for spacing.  In many situations this solution will be preferred to `calc()` within flexbox.
