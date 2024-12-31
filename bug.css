@@ -1,0 +1,15 @@
+The following CSS code snippet demonstrates an issue with unexpected behavior when using the `calc()` function with percentages and lengths in the context of flexbox:
+
+```css
+.container {
+display: flex;
+}
+
+.item {
+width: calc(50% - 10px);
+}
+```
+
+The intention is to have two items taking up half the available space with a 10px gap between them. However, this might not work as expected in all browsers because the `calc()` function within the context of flexbox can lead to inconsistent results. This is particularly true when dealing with dynamic content or varying screen sizes. The flexbox layout algorithm may not precisely calculate the available space before applying the `calc()` function, leading to unexpected gaps or overlaps. 
+
+This behavior can be subtly different in how various browsers implement flexbox and how they handle calculations involving percentages, pixels, and other units in combination.
